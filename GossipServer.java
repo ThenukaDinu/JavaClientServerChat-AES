@@ -17,6 +17,7 @@ public class GossipServer
 	Socket sock;
 	SimpleFormatter formatter;
 	ServerSocket sersock;
+	String receiveMessage, sendMessage, decryptedString, encryptedString;  
 
 	public GossipServer() throws Exception {
 		sersock = new ServerSocket(3000);
@@ -49,7 +50,6 @@ public class GossipServer
 		
 		BufferedReader receiveRead = new BufferedReader(new InputStreamReader(istream));
 		
-		String receiveMessage, sendMessage, decryptedString, encryptedString;  
 		final String secretKey = "ssshhhhhhhhhhh!!!!";
 
 		while(true)

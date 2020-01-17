@@ -16,6 +16,7 @@ public class GossipClient
 	FileHandler fh;
 	Socket sock;
 	SimpleFormatter formatter;
+	String receiveMessage, sendMessage, encryptedString, decryptedString;  
 
 	public GossipClient() throws Exception {
 		sock = new Socket("127.0.0.1", 3000);
@@ -42,8 +43,6 @@ public class GossipClient
 		InputStream istream = sock.getInputStream();
 		BufferedReader receiveRead = new BufferedReader(new InputStreamReader(istream));
 	
-
-		String receiveMessage, sendMessage, encryptedString, decryptedString;  
 		final String secretKey = "ssshhhhhhhhhhh!!!!";
 
 		System.out.println("Start the chitchat, type and press Enter key");
